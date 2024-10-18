@@ -9,7 +9,9 @@ from shodan import Shodan
 from key import SHODAN_KEY, VIRUS_TOTAL
 import time
 from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry 
+from urllib3.util.retry import Retry
+from whois import whois
+
 
 # API key de Shodan (Necesitas obtener tu propia API key en https://www.shodan.io/)
 SHODAN_API_KEY = SHODAN_KEY
@@ -41,7 +43,9 @@ def get_domain_info(url):
         return
 
     try:
-        w = whois.whois(domain)
+        # Cambiado aquí para usar la importación directa
+        from whois import whois
+        w = whois(domain)
         print(f"Domain info: {w}")
     except Exception as e:
         print(f"Whois error: {e}")
@@ -79,7 +83,7 @@ def check_ssl_certificate(url):
     except Exception as e:
         print(f"SSL Certificate error: {e}")
 
-# Verificar reputación de la URL usando VirusTotal (requiere la API key)
+# Verificar reputación de la URL usando VirusTotal (requiere API key)
 def check_url_reputation(url):
     api_key = VIRUS_TOTAL
     headers = {
