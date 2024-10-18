@@ -76,7 +76,7 @@ def check_ssl_certificate(url):
             expiry_date = datetime.strptime(cert['notAfter'], '%b %d %H:%M:%S %Y %Z')
             print(f"SSL Certificate issued to: {issued_to}")
             print(f"Certificate valid until: {expiry_date}")
-            if expiry_date < datetime.utcnow():
+            if expiry_date < datetime.now(datetime.UTC):
                 print("Warning: SSL certificate is expired!")
             else:
                 print("SSL certificate is valid.")
