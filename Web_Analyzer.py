@@ -9,7 +9,7 @@ from shodan import Shodan
 from key import SHODAN_KEY, VIRUS_TOTAL
 import time
 from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry  # Corregido aquí
+from urllib3.util.retry import Retry 
 
 # API key de Shodan (Necesitas obtener tu propia API key en https://www.shodan.io/)
 SHODAN_API_KEY = SHODAN_KEY
@@ -79,7 +79,7 @@ def check_ssl_certificate(url):
     except Exception as e:
         print(f"SSL Certificate error: {e}")
 
-# Verificar reputación de la URL usando VirusTotal (requiere API key)
+# Verificar reputación de la URL usando VirusTotal (requiere la API key)
 def check_url_reputation(url):
     api_key = VIRUS_TOTAL
     headers = {
