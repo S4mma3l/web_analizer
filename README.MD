@@ -32,6 +32,8 @@
 
    pip install -r requirements.txt
 2. Crear un archivo key.py donde ingresaras tus:
+
+    ```bash
     SHODAN_KEY = 'tu_clave_de_shodan'
     VIRUS_TOTAL = 'tu_clave_de_virustotal'
 
