@@ -1,0 +1,7 @@
+virustotal-python
+censys
+shodan
+beautifulsoup4
+python-nmap
+python-whois
+requests
